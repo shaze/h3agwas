@@ -1,0 +1,123 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\setlist[description]{leftmargin=*}
+
+\title{h3agwas}
+\author{H3ABionet GWAS Pipeline}
+\date{August 2016}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+\section{Getting Started}
+
+\subsection{Required Components}
+
+The H3AGWAS workflow will require two main software packages to be installed on the system intended to execute it. Since there are two ways to execute this workflow, different software requirements exist for the different execution methods.
+
+\begin{itemize}
+    \item Non-containerized Run
+    \begin{description}
+        \item Non-containerized runs require two software packages to be installed on the local machine or cluster environment.
+    \end{description}
+    \begin{itemize}
+        \item Plink
+        \begin{description}
+            \item The Plink binary can be found at \url{https://www.cog-genomics.org/plink2}.
+        \end{description}
+        \item R
+        \begin{description}
+            \item Various R packages should be available with most Linux distribution package management implementations. Only the R base is needed with the addition of the KernSmooth module for graphing. The R source code can be found at \url{https://cran.r-project.org/}.
+        \end{description}
+    \end{itemize}
+\end{itemize}
+
+\subsection{Where to Download}
+
+\subsection{Installation and Configuration}
+\vspace{1em} % adds some space
+
+
+\section{System Architecture}
+\subsection{Files and Directory Structure}
+\vspace{1em} % adds some space
+
+\section{Fundamental Concepts}
+\subsection{Sample Quality Control (QC)}
+\subsection{Discordant sex information}
+\subsection{High missingness}
+\subsection{Excess or deficiency of heterozygosity}
+\subsection{Duplicate or related individuals and IBD}
+\subsection{Divergent ancestry}
+\subsection{SNP and Marker Quality Control (QC)}
+\subsection{Low Minor Allele frequency SNPs}
+\subsection{Missingness Frequency}
+\subsection{Differential Missingness}
+\subsection{Hardy Weinberg (HW) Equilibrium}
+\vspace{1em} % adds some space
+
+\section{Learn H3AGWAS By Example}
+\subsection{Run Without Docker on a Local Environment}
+\subsection{Run With Docker on a Local Environment}
+\subsection{Run on a Cluster Environment}
+\subsection{Run H3AGWAS on the Cloud}
+\vspace{1em} % adds some space
+
+
+
+
+
+\section{Developer's Guide and Code Structure}
+\subsection{Definition and Initialization of Global Variables}
+
+This segment contains the "initialization code". Data objects and variables to be further used in the pipeline are given initial values here. These parameter names prefixed with the params keyword specifies parameters that will be accessible all through the pipeline script. For Example:
+
+\begin{itemize}
+    \item \textbf{params.work\_dir} : This specifies and initializes the work directory
+\end{itemize}
+\begin{itemize}
+    \item \textbf{params.input\_dir} : This specifies and initializes the input directory
+\end{itemize}
+\begin{itemize}
+    \item \textbf{params.output\_dir} : This specifies and initializes the output directory
+\end{itemize}
+\begin{itemize}
+    \item \textbf{params.scripts} : This variable defines and initializes the directory path where all the external scripts such as R scripts, Python scripts, Perl scripts e.t.c required to be called in the pipeline execution are located.
+\end{itemize}
+\begin{itemize}
+    \item \textbf{params.data\_name}: The pipeline requires 3 plink binary files in the plink data directory with thesame names but different extensions .fam, .bed, .bim. This string variable is assigned the common name of the plink files. Note: This must be without the extensions (so if the file names are A.fam, A.bed, and A.bim then params.data\_name is assigned a value: 'A')
+\end{itemize}
+\begin{itemize}
+    \item \textbf{params.high\_ld\_regions\_fname}: This variable holds the users choice when computing the degree of recent shared ancestry for a pair of individuals referred to as Identity By Descent (IBD), If the user chooses to include regions with high Linkage Disequilibrium (LD) in the computation, this string variable should be left empty.
+\end{itemize}
+\begin{itemize}
+    \item \textbf{params.sexinfo\_available} : The pipeline requires 3 plink binary f 
+\end{itemize}
+
+
+
+
+
+
+
+\subsection{Definition of Standard Cut offs and threshold Values}
+\subsection{Variable Refinement and Adjustments}
+\subsection{Pipeline Code Execution }
+\vspace{1em} % adds some space
+
+
+
+\section{Getting Support, More Examples and Dataset}
+
+
+
+
+
+
+
+\end{document}
